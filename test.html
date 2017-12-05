@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+  <style>
+    *{margin:0;padding:0}
+    .a{
+      height:100px;
+      line-height:100px;
+      background: red;
+    }
+    img{
+      width:50px;
+      height:50px;
+        /*display: inline-block;*/
+      position: absolute;
+      top:30px;
+      vertical-align: bottom;
+    }
+    span{
+      line-height:0;
+      background: #000;
+      color: #fff;
+    }
+    p{
+      height:100px;
+    }
+
+  </style>
+</head>
+<body>
+           <div class="a">
+             <img src="./static/1.jpg" alt="">
+             <span>hello</span>
+           </div>
+           <p>hello</p>
+   <script>
+     function removeWithoutCopy(arr, item) {
+       var indexArr = [],index
+       arr.forEach(function(val,index){
+         if(val===item){
+           indexArr.push(index)
+         }
+       })
+       return  removeByIndexArr(arr,indexArr)
+     }
+     var arr = removeWithoutCopy([1,2,3,3,4,3],3)
+     console.log(arr)
+
+     function removeByIndexArr(arr,indexArr){
+       var s = 0
+       for(var i = 0;i<indexArr.length;i++){
+         arr.splice(indexArr[i]-s,1)
+         s++
+       }
+       return arr
+     }
+   </script>
+</body>
+</html>
